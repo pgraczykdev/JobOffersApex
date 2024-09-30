@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog 
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:n0="http://www.oracle.com/xml/ns/dbchangelog-ext" 
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog 
+	http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+	<changeSet id="813793a6e2a67f83ce0d2112266622f7b1ff1cf1" author="(JOBOFFERS)-Generated" failOnError="true"   runOnChange="true" runAlways="false"  >
+		<n0:createOracleComment objectName="CONSOLE_LOGS" objectType="COMMENT" ownerName="JOBOFFERS" sourceType="STRING" replaceIfExists="false" >
+			<n0:source><![CDATA[
+   COMMENT ON COLUMN "CONSOLE_LOGS"."LOG_ID" IS 'Primary key based on a sequence.';
+   COMMENT ON COLUMN "CONSOLE_LOGS"."LOG_TIME" IS 'Log systimestamp.';
+   COMMENT ON COLUMN "CONSOLE_LOGS"."LEVEL_ID" IS 'Level ID. Can be 1 (error), 2 (warning), 3 (info), 4 (debug) or 5 (trace).';
+   COMMENT ON COLUMN "CONSOLE_LOGS"."LEVEL_NAME" IS 'Level name - for informational purposes only. Indexed columns are only LOG_TIME, LEVEL_ID. If you need more indexes please help yourself.';
+   COMMENT ON COLUMN "CONSOLE_LOGS"."PERMANENT" IS 'If ''Y'' the log entry will not be deleted when calling CONSOLE.PURGE or CONSOLE.PURGE_ALL.';
+   COMMENT ON COLUMN "CONSOLE_LOGS"."SCOPE" IS 'The current unit/module in which the log was generated (OWNER.PACKAGE.MODULE.SUBMODULE, line number). Couls also be an external scope provided by the user.';
+   COMMENT ON COLUMN "CONSOLE_LOGS"."MESSAGE" IS 'The log message itself.';
+   COMMENT ON COLUMN "CONSOLE_LOGS"."ERROR_CODE" IS 'The error code. Is normally the SQLCODE, but could also be a user error code when log entry was coming from an external process (user interface, ETL preprocessing, whatever...)';
+   COMMENT ON COLUMN "CONSOLE_LOGS"."CALL_STACK" IS 'The call_stack and in case of an error also the error stack and error backtrace. Could also be an external call stack provided by the user.';
+   COMMENT ON COLUMN "CONSOLE_LOGS"."SESSION_USER" IS 'The name of the session user (the user who logged on). This may change during the duration of a database session as Real Application Security sessions are attached or detached. For enterprise users, returns the schema. For other users, returns the database user name. If a Real Application Security session is currently attached to the database session, returns user XS$NULL.';
+   COMMENT ON COLUMN "CONSOLE_LOGS"."MODULE" IS 'The application name (module). Can be set by an application using the DBMS_APPLICATION_INFO package or OCI.';
+   COMMENT ON COLUMN "CONSOLE_LOGS"."ACTION" IS 'The action/position in the module. Can be set through the DBMS_APPLICATION_INFO package or OCI.';
+   COMMENT ON COLUMN "CONSOLE_LOGS"."CLIENT_INFO" IS 'The client information. Can be set by an application using the DBMS_APPLICATION_INFO package or OCI.';
+   COMMENT ON COLUMN "CONSOLE_LOGS"."CLIENT_IDENTIFIER" IS 'The client identifier. Can be set by an application using the DBMS_SESSION.SET_IDENTIFIER procedure, the OCI attribute OCI_ATTR_CLIENT_IDENTIFIER, or Oracle Dynamic Monitoring Service (DMS). This attribute is used by various database components to identify lightweight application users who authenticate as the same database user.';
+   COMMENT ON COLUMN "CONSOLE_LOGS"."IP_ADDRESS" IS 'IP address of the machine from which the client is connected. If the client and server are on the same machine and the connection uses IPv6 addressing, then it is set to ::1.';
+   COMMENT ON COLUMN "CONSOLE_LOGS"."HOST" IS 'Name of the host machine from which the client is connected.';
+   COMMENT ON COLUMN "CONSOLE_LOGS"."OS_USER" IS 'Operating system user name of the client process that initiated the database session.';
+   COMMENT ON COLUMN "CONSOLE_LOGS"."OS_USER_AGENT" IS 'Operating system user agent (for example web browser engine). This information will only be available, if actively provided to one of the console log methods. For APEX we have a plug-in to log client side JavaScript errors, which provides here the user agent of the browser.';
+   COMMENT ON TABLE "CONSOLE_LOGS"  IS 'Table for log entries of the package CONSOLE. Column names are mostly driven by the attribute names of SYS_CONTEXT(''USERENV'') and DBMS_SESSION for easier mapping and clearer context.';]]></n0:source>
+		</n0:createOracleComment>
+	</changeSet>
+</databaseChangeLog>

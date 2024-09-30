@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog 
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:n0="http://www.oracle.com/xml/ns/dbchangelog-ext" 
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog 
+	http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+	<changeSet id="46574cbf73b05eaa128c1927943ecc033d988d1d" author="(JOBOFFERS)-Generated" failOnError="true"   runOnChange="true" runAlways="false"  >
+		<n0:createOracleComment objectName="CONSOLE_CONF" objectType="COMMENT" ownerName="JOBOFFERS" sourceType="STRING" replaceIfExists="false" >
+			<n0:source><![CDATA[
+   COMMENT ON COLUMN "CONSOLE_CONF"."CONF_ID" IS 'The primary key - is secured by a check constraint which allows only one record in the table.';
+   COMMENT ON COLUMN "CONSOLE_CONF"."CONF_SYSDATE" IS 'The date when console was configured the last time.';
+   COMMENT ON COLUMN "CONSOLE_CONF"."CONF_USER" IS 'The user who configured the console the last time.';
+   COMMENT ON COLUMN "CONSOLE_CONF"."LEVEL_ID" IS 'The defined log level ID.';
+   COMMENT ON COLUMN "CONSOLE_CONF"."LEVEL_NAME" IS 'The defined log level name (only for informational purposes).';
+   COMMENT ON COLUMN "CONSOLE_CONF"."CHECK_INTERVAL" IS 'The number of seconds a session looks for a changed configuration.';
+   COMMENT ON COLUMN "CONSOLE_CONF"."ENABLE_ASCII_ART" IS 'Currently used to have more fun with the APEX error handling messages. But who knows...';
+   COMMENT ON COLUMN "CONSOLE_CONF"."CLIENT_PREFS" IS 'Client preferences in CSV format. We save it in this way to have always only one row of configuration data which we read with the result cache.';
+   COMMENT ON TABLE "CONSOLE_CONF"  IS 'Holds the console configuration in a single record.';]]></n0:source>
+		</n0:createOracleComment>
+	</changeSet>
+</databaseChangeLog>

@@ -1,0 +1,7 @@
+# ignore all logs
+*.log
+
+DEV_PREVIEW.sql
+lbgenapp.sql
+lbgenschema.sql
+lbupdate.sql
