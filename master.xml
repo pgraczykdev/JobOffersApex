@@ -9,9 +9,10 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog 
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
   <includeAll path="./database/comment/"/>
-  <includeAll path="./database/index/"/>
-  <includeAll path="./database/package_body/"/>
+  <includeAll path="./database/type/"/>
   <includeAll path="./database/package_spec/"/>
+  <includeAll path="./database/package_body/"/>
   <includeAll path="./database/table/"/>
-  <include file="./apex/apex_install.xml" />
+  <includeAll path="./database/index/"/>
+  <include file="./apex/apex_install.xml"/>
 </databaseChangeLog> 

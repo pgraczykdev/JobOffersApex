@@ -33,14 +33,14 @@ prompt APPLICATION 100 - Job Offers
 -- Application Export:
 --   Application:     100
 --   Name:            Job Offers
---   Date and Time:   16:24 Niedziela Wrzesień 29, 2024
+--   Date and Time:   17:43 Niedziela Październik 6, 2024
 --   Exported By:     JOBOFFERS
 --   Flashback:       0
 --   Export Type:     Application Export
 --     Pages:                      3
 --       Items:                    3
 --       Processes:                4
---       Regions:                  2
+--       Regions:                  3
 --       Buttons:                  1
 --     Shared Components:
 --       Logic:
@@ -17931,6 +17931,31 @@ wwv_flow_imp_page.create_page_plug(
   'expand_shortcuts', 'N',
   'output_as', 'HTML',
   'show_line_breaks', 'Y')).to_clob
+);
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(13712245582232801)
+,p_plug_name=>'New'
+,p_region_template_options=>'#DEFAULT#'
+,p_component_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_imp.id(11180997806210580)
+,p_plug_display_sequence=>10
+,p_query_type=>'SQL'
+,p_plug_source=>'SELECT 1 FROM DUAL;'
+,p_lazy_loading=>false
+,p_plug_source_type=>'NATIVE_CARDS'
+,p_plug_query_num_rows_type=>'SCROLL'
+,p_show_total_row_count=>false
+);
+wwv_flow_imp_page.create_card(
+ p_id=>wwv_flow_imp.id(13712331509232802)
+,p_region_id=>wwv_flow_imp.id(13712245582232801)
+,p_layout_type=>'ROW'
+,p_title_adv_formatting=>false
+,p_sub_title_adv_formatting=>false
+,p_body_adv_formatting=>false
+,p_body_column_name=>'1'
+,p_second_body_adv_formatting=>false
+,p_media_adv_formatting=>false
 );
 end;
 /

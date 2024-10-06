@@ -29,7 +29,10 @@
             <column name="country" type="VARCHAR2(100)"/>
             <column name="redirected_url" type="VARCHAR2(500)"/>
         </createTable>
-
+          <sql>
+            ALTER TABLE jobs ADD (job_industries industry_type_ntt)
+            NESTED TABLE job_industries STORE AS industry_type_tab;
+        </sql>
         <addForeignKeyConstraint 
             baseTableName="jobs"
             baseColumnNames="company_id"
